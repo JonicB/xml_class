@@ -36,13 +36,13 @@ class XmlClass{
 };
 
 int main() {
-    XmlClass example("C:\\Users\\Женя\\Desktop\\Работа\\Аладдин\\bd\\prov.xml");
+    XmlClass example("/bd/prov.xml");
     for (int i=0; i<100; i++){
         example.setElement("User"+std::to_string(i),"Password"+std::to_string(i));
     }
 
     sqlite3 *db;
-    int rc = sqlite3_open_v2("C:\\Users\\Женя\\Desktop\\Работа\\Аладдин\\bd\\test.db", &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
+    int rc = sqlite3_open_v2("/bd/test.db", &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
 
     std::string sql = "CREATE TABLE IF NOT EXISTS user("  \
       "id INTEGER PRIMARY KEY AUTOINCREMENT," \
