@@ -1,0 +1,4 @@
+C:/Users/Женя/Desktop/Работа/Аладдин/bd/cmake-build-debug/CMakeFiles/libs.dir
+C:/Users/Женя/Desktop/Работа/Аладдин/bd/cmake-build-debug/CMakeFiles/main.dir
+C:/Users/Женя/Desktop/Работа/Аладдин/bd/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Женя/Desktop/Работа/Аладдин/bd/cmake-build-debug/CMakeFiles/rebuild_cache.dir
