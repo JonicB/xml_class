@@ -13,16 +13,22 @@
 #ENTRYPOINT ./cmake-build-debug
 #VOLUME ./build:/bd/build
 
-FROM ubuntu
-WORKDIR bd
+FROM debian:latest
+ENV WORKSPACE="/root/bd"
+WORKDIR ${WORKSPACE}
 COPY . .
-RUN apt-get update
-#RUN apt-get install g++
-RUN apt -y install build-essential
-RUN apt-get install -y cmake
-WORKDIR bd
+RUN apt-get update && \
+    apt-get --no-install-recommends install -y \
+        gcc \
+        g++ \
+        make \
+        pkg-config \
+        cmake
+
+# RUN apt -y install build-essential cmake
 #RUN make .
-#RUN cmake --build .
+RUN rm -rf build/
+WORKDIR ${WORKSPACE}/build
 RUN cmake .. && make
-#RUN make .
-ENTRYPOINT ./main
+RUN cp ../*.xml ../*.db ./
+ENTRYPOINT ./sqlite_bd

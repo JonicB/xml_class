@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.18)
 project(sqlite_bd)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -12,4 +12,4 @@ add_library(libs STATIC ${SOURCE_LIB})
 
 add_executable(sqlite_bd main.cpp)
 
-target_link_libraries(sqlite_bd libs)
+target_link_libraries(sqlite_bd libs pthread dl)
